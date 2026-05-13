@@ -1,0 +1,7 @@
+# Hugo – katalogi z wygenerowaną stroną
+/public/
+/resources/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db

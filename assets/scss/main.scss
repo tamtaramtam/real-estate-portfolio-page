@@ -12,3 +12,9 @@
 @import 'components/buttons';
 @import 'components/cards';
 @import 'components/gallery';
+@import 'components/forms';
+
+// layout - większe części strony (np. header, footer, grid)
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navigation';

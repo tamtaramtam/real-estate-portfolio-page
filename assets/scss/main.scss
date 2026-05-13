@@ -1,0 +1,14 @@
+// abstracts - zmienne, funkcje, miksiny
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// base - reset, globalne style, typografia
+@import 'base/reset';
+@import 'base/global';
+@import 'base/typography';
+
+// components - mniejsze części strony (np. karta oferty)
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/gallery';

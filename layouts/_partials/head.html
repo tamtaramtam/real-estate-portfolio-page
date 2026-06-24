@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Title }}</title>
+
+<!-- SEO meta tags -->
+{{ if .IsHome }}
+    {{/* Jeśli to strona główna, weź ogólny opis z pliku konfiguracyjnego */}}
+    <meta name="description" content="{{ .Site.Params.description }}">
+{{ else }}
+    {{/* dla podstron sprawdź czy plik zawiera opis, w przeciwnym razie użyj streszczenia */}}
+    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}">
+{{ end }}
+
+<!-- METADANE OPEN GRAPH (Podgląd na Facebooku, Discordzie, X/Twitterze) -->
+{{ if .IsHome }}
+    {{/* Konfiguracja podglądu dla strony głównej, używa ogólnych danych witryny */}}
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+{{ else }}
+    {{/* Konfiguracja podglądu dla konkretnego wpisu */}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}">
+    <meta property="og:type" content="article">
+    {{/* Automatyczny pełny link do konkretnego wpisu */}}
+    <meta property="og:url" content="{{ .Permalink }}">
+{{ end }}
+
+{{/* Pobranie i przetworzenie pliku SCSS do CSS, minifikacja i dodanie odcisku palca dla bezpieczeństwa 
+- resources.Get: pobiera główny plik z assets/scss
+- toCSS: przetwarza SCSS do CSS
+- minify: minimalizuje plik CSS usuwanie spacji/enter itd
+- fingerprint: generuje unikalny skrót kryptograficzny pliku - nazwa zmienia się przy każdej zmianie co wymusza przeglądarkę do pobrania nowej wersji 
+*/}}
+{{ $style := resources.Get "scss/styles.scss" | toCSS | minify | fingerprint }}
+{{/* 
+- integrity: wstawia wygenerowany fingerprint
+- crossorigin: ustawia politykę CORS na "anonymous" co pozwala na pobieranie zasobów z innych domen bez przesyłania ciasteczek i nagłówków uwierzytelniających
+daje przeglądarce uprawnienia do odczytania pliku i sprawdzenia kodu integrity.
+*/}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">

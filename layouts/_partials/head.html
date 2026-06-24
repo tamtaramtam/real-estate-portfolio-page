@@ -33,7 +33,7 @@
 - minify: minimalizuje plik CSS usuwanie spacji/enter itd
 - fingerprint: generuje unikalny skrót kryptograficzny pliku - nazwa zmienia się przy każdej zmianie co wymusza przeglądarkę do pobrania nowej wersji 
 */}}
-{{ $style := resources.Get "scss/styles.scss" | toCSS | minify | fingerprint }}
+{{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
 {{/* 
 - integrity: wstawia wygenerowany fingerprint
 - crossorigin: ustawia politykę CORS na "anonymous" co pozwala na pobieranie zasobów z innych domen bez przesyłania ciasteczek i nagłówków uwierzytelniających

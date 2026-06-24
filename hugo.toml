@@ -1,4 +1,6 @@
 baseURL = 'http://localhost:1313/'
-languageCode = 'pl-pl'
+locale = 'pl-pl'
 title = 'Strona wizytówkowa nieruchomości'
 enableRobotsTXT = true  # dla SEO
+# Wyłącza generowanie stron dla tagów, kategorii i sekcji archiwum
+disableKinds = ["taxonomy", "term", "section"]

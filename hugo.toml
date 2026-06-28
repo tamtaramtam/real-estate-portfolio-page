@@ -4,3 +4,24 @@ title = 'Strona wizytówkowa nieruchomości'
 enableRobotsTXT = true  # dla SEO
 # Wyłącza generowanie stron dla tagów, kategorii i sekcji archiwum
 disableKinds = ["taxonomy", "term", "section"]
+[menu]
+    [[menu.main]]
+        name = "Strona główna"
+        pageRef = "/"
+        weight = 10
+    [[menu.main]]
+        name = "O mnie"
+        pageRef = "#/o-mnie"
+        weight = 20
+    [[menu.main]]
+        name = "Oferty"
+        pageRef = "/#oferty"
+        weight = 30
+    [[menu.main]]
+        name = "Portfolio"
+        pageRef = "/portfolio"
+        weight = 40
+    [[menu.main]]
+        name = "Kontakt"
+        pageRef = "/kontakt"
+        weight = 50

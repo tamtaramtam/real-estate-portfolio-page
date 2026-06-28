@@ -1,0 +1,27 @@
+<header>
+    <!-- logo / tytuł -->
+    <div class="container">
+        <h1 class="site-title">
+            <a href="{{ site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+        </h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="container">
+            <ul>
+                <!--range .Site.Menus.main - pętla po pozycjach menu z hugo.toml / .URL adres pageRef -->
+                {{ range .Site.Menus.main }}
+                {{/* $ - sprawdzamy czy strona jest aktualnie przeglądana */}}
+                    {{ $isActive := $.isMenuCurrent "main" . }}
+                    <li>
+                        <a href="{{ .URL }}" {{ if $isActive }} class="active"{{ end }}>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </nav>
+
+</header>

@@ -13,9 +13,9 @@
                 <!--range .Site.Menus.main - pętla po pozycjach menu z hugo.toml / .URL adres pageRef -->
                 {{ range .Site.Menus.main }}
                 {{/* $ - sprawdzamy czy strona jest aktualnie przeglądana */}}
-                    {{ $isActive := $.isMenuCurrent "main" . }}
+                    {{ $isActive := $.IsMenuCurrent "main" . }}
                     <li>
-                        <a href="{{ .URL }}" {{ if $isActive }} class="active"{{ end }}>
+                        <a href="{{ .URL }}" {{ if $isActive }} class="is-active"{{ end }}>
                             {{ .Name }}
                         </a>
                     </li>

@@ -1,0 +1,31 @@
+<footer>
+    <div class="footer-container">
+        <!-- nawigacja w stopce -->
+        <div class="footer-nav">
+            <h4>Menu</h4>
+            <ul>
+                {{ range .Site.Menus.main }}
+                    {{ $isActive := $.IsMenuCurrent "main" . }}
+                    <li>
+                        <a href="{{ .URL }}" {{ if $isActive }} class="is-active"{{ end }}>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="footer-contact">
+            <h4>Kontakt</h4>
+            <p>Telefon: <a href="tel:...">+48 ...</a></p>
+            <p>Email: <a href="mailto:....">...@mail</a></p>
+        </div>
+
+        <!-- polityka prywatności -->
+        <div class="footer-privacy">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzeżone.</p>
+            <p><a href="/polityka-prywatnosci">Polityka prywatności</a></p>
+        </div>
+    </div>
+</footer>

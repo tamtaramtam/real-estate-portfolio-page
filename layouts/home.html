@@ -1,6 +1,15 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range .Site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a></h2>
-  {{ end }}
+
+  <!-- sekcja z opisem działaności -->
+  <section id="o-mnie">
+    <h2>O mnie</h2>
+    <p>Tutaj znajduje się opis mojej działalności.</p>
+  </section>
+
+  <!-- sekcja z ofertami -->
+  <section id="oferty">
+    <h2>Oferty</h2>
+    <!-- Tutaj można dodać listę ofert lub produktów -->
+  </section> 
+  
 {{ end }}

@@ -3,20 +3,15 @@
 <head>
     {{ partial "head.html" . }}
 </head>
+
 <body>
-    <header>
-        {{ partial "header.html" . }}
-    </header>
+    {{ partial "header.html" . }}
 
     <main>
         {{ block "main" . }}
-        This will be replaced with content from the 
-        corresponding "define" action found in the template
-        to which this base template is applied.
+            {{/* Zawartość pliku home.html*/}}
         {{ end }}
     </main>
 
-    <footer>
-        {{ partial "footer.html" . }}
-    </footer>
+    {{ partial "footer.html" . }}
 </body>

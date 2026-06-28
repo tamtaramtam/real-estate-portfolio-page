@@ -1,0 +1,14 @@
+header {
+    background: $gradient-beige-to-light;
+    background-color: $color-beige-dark;
+}
+
+main {
+    background: $color-beige-light;
+    $background-color: $color-beige-light;
+}
+
+footer {
+    background: $gradient-beige-to-dark;
+    background-color: $color-beige-dark;
+}

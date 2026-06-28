@@ -1,1 +1,24 @@
 // Kolory, breakpointy, czcionki...
+
+// ================ TŁO ==========================
+$color-beige-dark: #8B7A6B;     // ciemny beż (główny kolor header i footer)
+$color-beige-light: #F5EDE3;    // jasny beż główny kolor tła
+$color-beige-mid: #D4C4B7;      // przejściowy między ciemnym a jasnym
+
+// ================ KOLORY ==========================
+
+// kolory podstawowe
+$color-white: #FFFFFF;             // biały
+$color-black: #000000;             // czarny
+$color-brown: #8B4513;             // brązowy
+
+// kolory tekstu
+$color-text-dark: #3E3A36;        // ciemny tekst
+$color-text-light: #F5EDE3;       // jasny tekst
+$color-text-muted: #A9A9A9;       // przygaszony tekst
+$color-text-white: $color-white;    // biały tekst
+$color-text-black: $color-black;    // czarny tekst
+
+// gradienty
+$gradient-beige-to-light: linear-gradient(to bottom, $color-beige-dark 90%, $color-beige-light 100%); // gradient od ciemnego beżu do jasnego
+$gradient-beige-to-dark: linear-gradient(to bottom, $color-beige-light 10%, $color-beige-dark 100%); // gradient od jasnego beżu do ciemnego

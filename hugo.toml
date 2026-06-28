@@ -1,9 +1,16 @@
 baseURL = 'http://localhost:1313/'
 locale = 'pl-pl'
 title = 'Strona wizytówkowa nieruchomości'
-enableRobotsTXT = true  # dla SEO
+enableRobotsTXT = true
+
 # Wyłącza generowanie stron dla tagów, kategorii i sekcji archiwum
 disableKinds = ["taxonomy", "term", "section"]
+
+# auto konfiguracja mapy strony dla googla (SEO)
+[sitemap]
+    changefreq = 'weekly'
+    priority = 0.5
+
 [menu]
     [[menu.main]]
         name = "Strona główna"
@@ -11,7 +18,7 @@ disableKinds = ["taxonomy", "term", "section"]
         weight = 10
     [[menu.main]]
         name = "O mnie"
-        pageRef = "#/o-mnie"
+        pageRef = "/#o-mnie"
         weight = 20
     [[menu.main]]
         name = "Oferty"

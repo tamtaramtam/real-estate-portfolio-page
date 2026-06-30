@@ -1,1 +1,47 @@
 //Miksiny (np. do media queries)
+
+// media quaries
+@mixin respond-to($breakpoint) {
+    @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint `#{$breakpoint}` nie istnieje w mapie";
+    }
+}
+
+// flex centrowanie
+@mixin flex-center($gap: 0, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+// flex rozłożenie (np. haeder, footer)
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// płynny tekst
+@mixin fluid-text($min-size, $max-size) {
+    font-size: clamp(#{$min-size}, calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - 320px) / (1400 - 320))), #{$max-size});
+}
+
+// delikatny cień
+@mixin shadow($opacity: 0.05) {
+    box-shadow: 0 10px 30px rgba(62, 58, 54, $opacity);
+}
+
+// efekt hover
+@mixin hover-transition {
+    transition: var(--transition-fast);
+
+    &:hover {
+        @content;
+    }
+}

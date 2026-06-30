@@ -1,1 +1,42 @@
-//Nagłówki, akapity
+//Nagłówki, akapity, tekst itd
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+
+    // wygładzannie czcionki na ekranach apple
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm-md);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    max-width: 70ch;    // długość linii tekstu odpowiadająca 70 znakom '0' w danej czcionce
+
+    &:last-child {
+        margin-bottom: 0; // ostatni akapit nie ma dolnego marginesu
+    }
+}

@@ -1,14 +1,14 @@
 header {
-    background: $gradient-beige-to-light;
-    background-color: $color-beige-dark;
+    background: var(--gradient-beige-to-light);
+    background-color: var(--color-beige-dark);
 }
 
 main {
-    background: $color-beige-light;
-    $background-color: $color-beige-light;
+    background: var(--color-beige-light);
+    background-color: var(--color-beige-light);
 }
 
 footer {
-    background: $gradient-beige-to-dark;
-    background-color: $color-beige-dark;
+    background: var(--gradient-beige-to-dark);
+    background-color: var(--color-beige-dark);
 }

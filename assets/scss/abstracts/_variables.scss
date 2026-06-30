@@ -1,24 +1,65 @@
 // Kolory, breakpointy, czcionki...
 
+// ================ BREAKPOINTS ==========================
+$breakpoints: (
+    'xs': 0,        // telefony
+    'sm': 576px,    // małe tablety
+    'md': 768px,    // tablety
+    'lg': 992px,    // laptopy
+    'xl': 1200px,   // duże laptopy
+    'xxl': 1400px   // monitory
+);
+
+:root {
 // ================ TŁO ==========================
-$color-beige-dark: #8B7A6B;     // ciemny beż (główny kolor header i footer)
-$color-beige-light: #F5EDE3;    // jasny beż główny kolor tła
-$color-beige-mid: #D4C4B7;      // przejściowy między ciemnym a jasnym
+    --color-beige-dark: #8B7A6B;     // ciemny beż (główny kolor header i footer)
+    --color-beige-light: #F5EDE3;    // jasny beż główny kolor tła
+    --color-beige-mid: #D4C4B7;      // przejściowy między ciemnym a jasnym
 
 // ================ KOLORY ==========================
 
-// kolory podstawowe
-$color-white: #FFFFFF;             // biały
-$color-black: #000000;             // czarny
-$color-brown: #8B4513;             // brązowy
+    // kolory podstawowe
+    --color-white: #FFFFFF;             // biały
+    --color-black: #000000;             // czarny
+    --color-brown: #8B4513;             // brązowy
 
-// kolory tekstu
-$color-text-dark: #3E3A36;        // ciemny tekst
-$color-text-light: #F5EDE3;       // jasny tekst
-$color-text-muted: #A9A9A9;       // przygaszony tekst
-$color-text-white: $color-white;    // biały tekst
-$color-text-black: $color-black;    // czarny tekst
+    // kolory tekstu
+    --color-text-dark: #3E3A36;        // ciemny tekst
+    --color-text-light: #F5EDE3;       // jasny tekst
+    --color-text-muted: #A9A9A9;       // przygaszony tekst
+    --color-text-white: var(--color-white);    // biały tekst
+    --color-text-black: var(--color-black);    // czarny tekst
 
-// gradienty
-$gradient-beige-to-light: linear-gradient(to bottom, $color-beige-dark 90%, $color-beige-light 100%); // gradient od ciemnego beżu do jasnego
-$gradient-beige-to-dark: linear-gradient(to bottom, $color-beige-light 10%, $color-beige-dark 100%); // gradient od jasnego beżu do ciemnego
+    // gradienty
+    --gradient-beige-to-light: linear-gradient(to bottom, var(--color-beige-dark) 90%, var(--color-beige-light) 100%); // gradient od ciemnego beżu do jasnego
+    --gradient-beige-to-dark: linear-gradient(to bottom, var(--color-beige-light) 10%, var(--color-beige-dark) 100%); // gradient od jasnego beżu do ciemnego
+
+// ================ Czcionki ==========================
+    --font-family-base: "Sansation", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; // podstawowa czcionka
+    --font-size-base: 1rem; // podstawowy rozmiar czcionki (16px)
+
+    //płynna skala
+    --font-size-h1: clamp(2rem, 4vw + 1rem, 3.5rem); // nagłówek h1
+    --font-size-h2: clamp(1.5rem, 3vw + 1rem, 2.5rem); // nagłówek h2
+    --font-size-h4: clamp(1.15rem, 1vw + 1rem, 1.35rem); // nagłówek h4
+
+// ================ SPCAING ==========================
+    --spacing-xs: 0.25rem; // 4px bardzo mały odstęp
+    --spacing-sm: 0.5rem;  // 8px mały odstęp
+    --spacing-sm-md: 0.75rem; // 12px mały-średni odstęp
+    --spacing-md: 1rem;    // 16px średni odstęp
+    --spacing-lg: 2rem;    // 32px duży odstęp
+    --spacing-xl: 4rem;    // 64px bardzo duży odstęp
+
+// ================ WYKOŃCZENIA ==========================
+    --border-radius-sm: 0.25rem; // 4px mały promień
+    --border-radius-md: 0.5rem;  // 8px średni promień
+    --border-radius-lg: 1rem;    // 16px duży promień
+
+    --shadow-nice: 0 10px 30px rgba(62, 58, 54, 0.05);
+
+// ================ ANIMACJE ==========================
+    --transition-fast: 0.2s ease-in-out; // szybka animacja
+    --transition-medium: 0.5s ease-in-out; // średnia animacja
+    --transition-slow: 1s ease-in-out; // wolna animacja
+}
